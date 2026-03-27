@@ -10,8 +10,7 @@ const app = express();
 app.use(express.json());
 
 // статика для фото
-const uploadDir =
-  process.env.RAILWAY_VOLUME_MOUNT_PATH || path.join(__dirname, "uploads");
+const uploadDir = path.join(__dirname, "uploads");
 if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
 app.use("/uploads", express.static(uploadDir));
 
