@@ -9,7 +9,7 @@ export async function api(path, options = {}) {
   };
 
   const t = token();
-  if (t) headers.Authorization = Bearer ${t};
+  if (t) headers.Authorization = `Bearer ${t}`;
 
   const res = await fetch(`/api${path}`, {
     ...options,
