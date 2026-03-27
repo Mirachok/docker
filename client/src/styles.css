@@ -1,0 +1,52 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #b9ffb9; } /* нежно-зелёный */
+
+.layout { min-height: 100vh; display: flex; flex-direction: column; }
+.header { background:#0e1a33; color:#fff; padding:12px 16px; display:flex; align-items:center; justify-content:flex-start; gap:16px; }
+.brand { font-weight: 800; }
+.nav { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+.nav a { color:#fff; text-decoration:none; }
+.nav a.router-link-active { text-decoration: underline; }
+
+.badge { background:#fff; color:#0e1a33; padding:2px 10px; border-radius:999px; font-weight:800; }
+
+.main { flex:1; padding:16px; max-width:1200px; width:100%; margin:0 auto; }
+.footer { padding:10px 16px; text-align:center; background: rgba(255,255,255,.65); }
+
+.card { background: rgba(255,255,255,.95); border-radius: 14px; padding: 16px; box-shadow: 0 8px 20px rgba(0,0,0,.12); }
+
+.tableWrap { overflow:auto; border-radius:12px; border:2px solid #0e1a33; margin-top:10px; }
+
+table { width:100%; border-collapse: collapse; min-width: 900px; }
+th { background:#005bff; color:#fff; padding:10px; border:2px solid #0e1a33; }
+td { background:#ff9a00; padding:10px; border:2px solid #0e1a33; vertical-align: middle; }
+
+.actions button { border:none; background:transparent; cursor:pointer; font-size:18px; margin-right:6px; }
+
+input { padding:8px; border-radius:8px; border:2px solid #0e1a33; }
+.btn { background:#0e1a33; color:#fff; border:none; padding:10px 14px; border-radius:10px; cursor:pointer; font-weight:800; }
+.formRow { display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; margin-top:10px; }
+
+/* ==== Фото (обновлено) ==== */
+.photoCell { width: 90px; } /* чтобы столбец с фото был шире */
+.photo {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: #fff;
+  border: 2px solid #0e1a33;
+  display: block;
+}
+
+/* Фото в детальном просмотре */
+.photoLarge {
+  width: 160px;
+  height: 160px;
+  border-radius: 16px;
+  object-fit: cover;
+  background: #fff;
+  border: 3px solid #0e1a33;
+  display: block;
+  margin: 10px 0 14px;
+}
