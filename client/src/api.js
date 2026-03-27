@@ -16,19 +16,9 @@ export async function api(path, options = {}) {
     headers,
   });
 
-  const contentType = res.headers.get("content-type") || "";
-  let data = null;
-  let text = "";
+  const txt = await res.text();
+  const data = txt ? JSON.parse(txt) : null;
 
-  if (contentType.includes("application/json")) {
-    data = await res.json();
-  } else {
-    text = await res.text();
-  }
-
-  if (!res.ok) {
-    throw new Error(data?.message  text  `HTTP ${res.status}`);
-  }
-
+  if (!res.ok) throw new Error(data?.message || `HTTP ${res.status}`);
   return data;
 }
